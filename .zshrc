@@ -29,6 +29,12 @@ export EDITOR="$VISUAL"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.emacs.d/bin:$PATH"
 
+#Path for python virtual env
+export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
+export PROJECT_HOME=$HOME/Devel
+source /usr/local/bin/virtualenvwrapper.sh
+
 #Load Plugins
 #Auto Suggestions
 source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
