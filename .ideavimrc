@@ -1,0 +1,119 @@
+let mapleader=" "
+
+" Vim settings
+set scrolloff=20
+set relativenumber
+set number
+set incsearch
+set visualbell
+set showcmd
+
+" From and copy to clipboard
+set clipboard+=unnamed
+
+"   IntelliJ specific settings"
+set ideajoin
+set idearefactormode=keep
+
+"   My Shortcut Mappings
+inoremap xx <esc>
+vnoremap xx <esc>
+nnoremap <C-a> gg<S-v>G
+
+" Move between splits
+nnoremap <C-h> <c-w>h
+nnoremap <C-l> <c-w>l
+nnoremap <C-j> <c-w>j
+nnoremap <C-k> <c-w>k
+
+"   My Action Mappings
+"   Project related actions
+nmap <leader>d <Action>(Debug)
+nmap ,rc  <Action>(ChooseRunConfiguration)
+nmap <leader>rc <Action>(RunClass)
+nmap <leader>c <Action>(Stop)
+nmap <leader>b <Action>(ToggleLineBreakpoint)
+
+"   Generate and modify stuff related actions
+map <leader>l <Action>(ReformatCode)
+nmap <leader>rn <Action>(RenameElement)
+nmap <leader>ge <Action>(Generate)
+nmap <leader>gf <Action>(NewElementSamePlace)
+nmap <leader>ns <Action>(NewScratchFile)
+
+"   Find things and files
+nmap <leader>f <Action>(FindInPath)
+nmap rf <Action>(RecentFiles)
+nmap ff <Action>(GotoFile)
+nmap fc <Action>(GotoClass)
+
+"   Open files in different ways
+nmap <C-n> <Action>(EditSourceInNewWindow)
+nmap <C-\> <Action>(SplitVertically)
+nmap <C--> <Action>(SplitHorizontally)
+
+"   Movement between opened files
+nmap <Tab> <Action>(NextTab)
+nmap <S-Tab> <Action>(PreviousTab)
+nmap <leader><Tab> <Action>(NextWindow)
+
+"   Movement between current and recent files"
+map gj <Action>(MethodDown)
+map gk <Action>(MethodUp)
+nmap gh <Action>(Back)
+nmap gl <Action>(Forward)
+nmap gs <Action>(GotoSuperMethod)
+nmap gi <Action>(GotoImplementation)
+map g, <Action>(JumpToLastChange)
+map g. <Action>(JumpToNextChange)
+nmap gd <Action>(GotoDeclaration)
+nmap gt <Action>(GotoTest)
+
+"   Find, Find and replace
+nmap / <Action>(Find)
+nmap r/ <Action>(Replace)
+
+"   Open things other then files
+" nmap  <C-t>
+nmap <leader>z <Action>(ToggleDistractionFreeMode)
+nmap <leader>t <Action>(ActivateTerminalToolWindow)
+
+"   Move current file in different pane
+nmap <C-m> <Action>(MoveEditorToOppositeTabGroup)
+
+"   close things
+nmap ;q <Action>(CloseContent)
+nmap ;a <Action>(CloseAllEditors)
+
+"   Time to use some plugins
+"   Some basic commands are given but RTFM
+
+"   Using easymotion and ace jump
+Plug 'easymotion/vim-easymotion'
+map <leader>J <Plug>(easymotion-s)
+map <leader>j <Plug>(easymotion-f)
+
+"   Using nerdTree
+"   Ctrl + t to open
+"   q to close
+"   o to open file
+"   go open but remain in tree
+"   i open in v-split
+"   gi
+"   s open in h-split
+"   gs
+"   <C-J> Jump to next sibling of current directory
+"   <C-K> Jump to previous sibling of current directory
+"   R recursive refresh
+"   m Display tree menu
+Plug 'preservim/nerdtree'
+map <C-t> :NERDTree<CR>
+
+"   Surround
+Plug 'tpope/vim-surround'
+
+"   MultiCursor
+Plug 'terryma/vim-multiple-cursors'
+map mc <A-n>
+map mx <A-x>
+map mp <A-p>
